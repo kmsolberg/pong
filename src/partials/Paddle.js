@@ -23,11 +23,20 @@ export default class Paddle {
     });
  }
 up(){
-  this.y = this.y - this.speed;
+  if (this.y <= Math.min(this.y, 0)) {
+    this.y = 0;
+  } else {
+    this.y = this.y - this.speed
+  }
 }
 
 down(){
-  this.y = this.y + this.speed;
+  let border = this.boardHeight-this.height
+  if (this.y >= Math.max(this.y, border)) {
+    this.y = (border);
+  } else {
+  this.y = this.y + this.speed; 
+  }
 }
 
  render(svg){
