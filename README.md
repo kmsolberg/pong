@@ -17,6 +17,7 @@ This project is a basic pong game using SVGs.  It was designed as an introductio
 - JSON
 - [New York Times API](https://developer.nytimes.com/)
 - SVG
+- ES.next
 - [Babel](https://babeljs.io/)
   - Dev dependencies:
     - babel-core
@@ -46,6 +47,7 @@ This project is a basic pong game using SVGs.  It was designed as an introductio
 - SVGs are useful for scaling but difficult to render if you want more than a basic shape.
 - Continued to build technical and javascript foundation
 - OOP can be complex to tackle at first, but is useful long-term expecially with larger projects, and is great for having multiple aspects being merged into one cohesive unit.
+- EX.next fixed many of the things I found confusing about Javascript and it was nice to be able to use those new tools.
 
 ## Setup
 
