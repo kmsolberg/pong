@@ -44,6 +44,8 @@ This project is a basic pong game using SVGs.  It was designed as an introductio
 - I learned a lot about local scope on this project, especially with the OOP. It is very useful when you're bringing together multiple elements.
 - There are often several solutions to everything, and deciding which is the best can depend on the amount of code, what else it may affect or be affected by.
 - SVGs are useful for scaling but difficult to render if you want more than a basic shape.
+- Continued to build technical and javascript foundation
+- OOP can be complex to tackle at first, but is useful long-term expecially with larger projects, and is great for having multiple aspects being merged into one cohesive unit.
 
 ## Setup
 
