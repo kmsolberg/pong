@@ -17,15 +17,13 @@ export default class Game {
 	this.paddleHeight = 56;
 	this.padding = 10;
 	this.radius = 8;
-	let svg = document.createElementNS(SVG_NS, 'svg');
 	
-
-	function multipleBalls () {
-		var ball = new Ball(this.radius, this.width, this.height)
-		for (var i = 0; i < 10; i++) {
-			ball[i] = new Ball(this.radius, this.width, this.height)
-		} return ball[i];
-	}
+	// function multipleBalls () {
+	// 	var ball = new Ball(this.radius, this.width, this.height)
+	// 	for (var i = 0; i < 10; i++) {
+	// 		this.ball[i] = new Ball(this.radius, this.width, this.height)
+	// 	} return ball[i];
+	// }
 
 	this.player1 = new Paddle(this.height, 
 		this.paddleWidth, 
@@ -41,7 +39,7 @@ export default class Game {
 		(height - this.paddleHeight) / 2,
 		KEYS.up,
 		KEYS.down);
-		
+	this.ball = new Ball(this.radius, this.width, this.height);
 	this.score1 = new Score(this.width/2 - 35, 20, this.size);
 	this.score2 = new Score(this.width/2 + 25, 20, this.size);
 
@@ -69,11 +67,8 @@ export default class Game {
 		this.player1.render(svg);
 		this.player2.render(svg);
 		this.ball.render(svg, this.player1, this.player2);	
-		// this.ball1.render(svg, this.player1, this.player2);							
 		this.score1.render(svg, this.player1.score);
 		this.score2.render(svg, this.player2.score);
-
-		this.multipleBalls();
 		
 	}
 	
