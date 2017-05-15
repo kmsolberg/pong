@@ -6,11 +6,11 @@ export default class Board {
     this.height = height;
   }
 
-  render (svg){
+  render(svg) {
     let rect = document.createElementNS(SVG_NS, 'rect');
     rect.setAttributeNS(null, 'width', this.width);
     rect.setAttributeNS(null, 'height', this.height);
-    rect.setAttributeNS(null, 'fill', '#353535');
+    rect.setAttributeNS(null, 'fill', '#193852');
     rect.setAttributeNS(null, 'x', '0');
     rect.setAttributeNS(null, 'y', '0');
 
@@ -23,7 +23,7 @@ export default class Board {
     line.setAttributeNS(null, 'y2', this.height)
     line.setAttributeNS(null, 'stroke-width', '4');
     line.setAttributeNS(null, 'stroke-dasharray', '20, 10');
-    line.setAttributeNS(null, 'stroke', 'white');
+    line.setAttributeNS(null, 'stroke', '#171828');
 
     svg.appendChild(line);
   }

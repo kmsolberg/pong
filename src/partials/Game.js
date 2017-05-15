@@ -19,13 +19,6 @@ export default class Game {
 		this.padding = 10;
 		this.radius = 8;
 
-		// function multipleBalls () {
-		// 	var ball = new Ball(this.radius, this.width, this.height)
-		// 	for (var i = 0; i < 10; i++) {
-		// 		this.ball[i] = new Ball(this.radius, this.width, this.height)
-		// 	} return ball[i];
-		// }
-
 		this.player1 = new Paddle(this.height,
 			this.paddleWidth,
 			this.paddleHeight,

@@ -81,7 +81,7 @@ export default class Ball {
     ball.setAttributeNS(null, 'cx', this.x);
     ball.setAttributeNS(null, 'cy', this.y);
     ball.setAttributeNS(null, 'r', this.radius);
-    ball.setAttributeNS(null, 'fill', 'white')
+    ball.setAttributeNS(null, 'fill', '#e6d868')
     svg.appendChild(ball);
 
     //detect goal
