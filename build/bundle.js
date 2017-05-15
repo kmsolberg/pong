@@ -148,13 +148,6 @@ var Game = function () {
 		this.padding = 10;
 		this.radius = 8;
 
-		// function multipleBalls () {
-		// 	var ball = new Ball(this.radius, this.width, this.height)
-		// 	for (var i = 0; i < 10; i++) {
-		// 		this.ball[i] = new Ball(this.radius, this.width, this.height)
-		// 	} return ball[i];
-		// }
-
 		this.player1 = new _Paddle2.default(this.height, this.paddleWidth, this.paddleHeight, this.padding, (height - this.paddleHeight) / 2, _settings.KEYS.a, _settings.KEYS.z);
 		this.player2 = new _Paddle2.default(this.height, this.paddleWidth, this.paddleHeight, width - this.padding - this.paddleWidth, (height - this.paddleHeight) / 2, _settings.KEYS.up, _settings.KEYS.down);
 		this.ball = new _Ball2.default(this.radius, this.width, this.height);
@@ -378,7 +371,7 @@ var Ball = function () {
       ball.setAttributeNS(null, 'cx', this.x);
       ball.setAttributeNS(null, 'cy', this.y);
       ball.setAttributeNS(null, 'r', this.radius);
-      ball.setAttributeNS(null, 'fill', 'white');
+      ball.setAttributeNS(null, 'fill', '#e6d868');
       svg.appendChild(ball);
 
       //detect goal
@@ -431,7 +424,7 @@ var Board = function () {
       var rect = document.createElementNS(_settings.SVG_NS, 'rect');
       rect.setAttributeNS(null, 'width', this.width);
       rect.setAttributeNS(null, 'height', this.height);
-      rect.setAttributeNS(null, 'fill', '#353535');
+      rect.setAttributeNS(null, 'fill', '#193852');
       rect.setAttributeNS(null, 'x', '0');
       rect.setAttributeNS(null, 'y', '0');
 
@@ -444,7 +437,7 @@ var Board = function () {
       line.setAttributeNS(null, 'y2', this.height);
       line.setAttributeNS(null, 'stroke-width', '4');
       line.setAttributeNS(null, 'stroke-dasharray', '20, 10');
-      line.setAttributeNS(null, 'stroke', 'white');
+      line.setAttributeNS(null, 'stroke', '#171828');
 
       svg.appendChild(line);
     }
@@ -523,7 +516,7 @@ var Paddle = function () {
       var padd = document.createElementNS(_settings.SVG_NS, 'rect');
       padd.setAttributeNS(null, 'width', '10');
       padd.setAttributeNS(null, 'height', '56');
-      padd.setAttributeNS(null, 'fill', 'white');
+      padd.setAttributeNS(null, 'fill', '#171828');
       padd.setAttributeNS(null, 'x', this.x);
       padd.setAttributeNS(null, 'y', this.y);
 
@@ -570,13 +563,11 @@ var Score = function () {
       text.setAttributeNS(null, 'y', this.y);
       text.setAttributeNS(null, 'font-size', this.size);
       text.setAttributeNS(null, 'font-family', 'Silkscreen Web, monotype');
-      text.setAttributeNS(null, 'fill', 'white');
+      text.setAttributeNS(null, 'fill', '#171828');
       text.textContent = score;
 
       svg.appendChild(text);
     }
-    //...
-
   }]);
 
   return Score;
@@ -623,8 +614,6 @@ var Victory = function () {
 
       svg.appendChild(text);
     }
-    //...
-
   }]);
 
   return Victory;
