@@ -70,6 +70,19 @@ export default class Ball {
     this.reset();
   }
 
+  detectGoal(player1, player2) {
+    const rightGoal = this.x + this.radius >= this.boardWidth;
+    const leftGoal = this.x - this.radius <= 0;
+    
+    if (rightGoal) {
+      this.goal(player1);
+      this.direction = 1;
+    } else if (leftGoal) {
+      this.goal(player2)
+      this.direction = -1;
+    }
+  }
+
   render(svg, player1, player2) {
     this.x += this.vx;
     this.y += this.vy;
@@ -84,16 +97,8 @@ export default class Ball {
     ball.setAttributeNS(null, 'fill', '#e6d868')
     svg.appendChild(ball);
 
-    //detect goal
     const rightGoal = this.x + this.radius >= this.boardWidth;
     const leftGoal = this.x - this.radius <= 0;
-
-    if (rightGoal) {
-      this.goal(player1);
-      this.direction = 1;
-    } else if (leftGoal) {
-      this.goal(player2)
-      this.direction = -1;
-    }
+    this.detectGoal(player1, player2);
   }
 }
