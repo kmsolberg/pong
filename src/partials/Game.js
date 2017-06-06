@@ -38,7 +38,7 @@ export default class Game {
 		this.score1 = new Score(this.width / 2 - 40, 30, this.size);
 		this.score2 = new Score(this.width / 2 + 25, 30, this.size);
 		this.victory1 = new Text(40, 110, 48);
-		this.victory2 = new Text(120, 150, this.size);
+		this.victory2 = new Text(10, 150, this.size);
 
 		document.addEventListener('keydown', event => {
 			if (event.key === KEYS.spaceBar) {
@@ -51,7 +51,7 @@ export default class Game {
 				location.reload()
 			}
 		})
-	}		
+	}
 
 	victoryA(svg){
 		if (this.player1.score >= 10) {
@@ -60,6 +60,7 @@ export default class Game {
 			this.victory2.render(svg, 'Press enter to play again!')
 		}
 	}
+
 	victoryB(svg){
 		if (this.player2.score >= 10) {
 			this.pause = true;

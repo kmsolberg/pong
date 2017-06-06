@@ -33,6 +33,7 @@ export default class Ball {
       this.vy = -this.vy;
     }
   }
+  
   paddleCollision(player1, player2) {
     // if moving toward the right
     if (this.vx > 0) {
