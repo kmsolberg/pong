@@ -43,7 +43,7 @@ export default class Paddle {
     let padd = document.createElementNS(SVG_NS, 'rect');
     padd.setAttributeNS(null, 'width', '10');
     padd.setAttributeNS(null, 'height', '56');
-    padd.setAttributeNS(null, 'fill', '#171828');
+    padd.setAttributeNS(null, 'fill', '#e6d868');
     padd.setAttributeNS(null, 'x', this.x);
     padd.setAttributeNS(null, 'y', this.y);
 

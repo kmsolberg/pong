@@ -18,6 +18,7 @@ export default class Game {
 		this.paddleHeight = 56;
 		this.padding = 10;
 		this.radius = 8;
+		this.size = 30;
 
 		this.player1 = new Paddle(this.height,
 			this.paddleWidth,
@@ -34,8 +35,8 @@ export default class Game {
 			KEYS.up,
 			KEYS.down);
 		this.ball = new Ball(this.radius, this.width, this.height);
-		this.score1 = new Score(this.width / 2 - 35, 20, this.size);
-		this.score2 = new Score(this.width / 2 + 25, 20, this.size);
+		this.score1 = new Score(this.width / 2 - 40, 30, this.size);
+		this.score2 = new Score(this.width / 2 + 25, 30, this.size);
 		this.victory1 = new Text(40, 110, 48);
 		this.victory2 = new Text(120, 150, this.size);
 
@@ -51,20 +52,21 @@ export default class Game {
 			}
 		})
 	}		
-		victoryA(svg){
-			if (this.player1.score >= 10) {
-				this.pause = true;
-				this.victory1.render(svg, 'Player 1 wins!')
-				this.victory2.render(svg, 'Press enter to play again!')
-			}
+
+	victoryA(svg){
+		if (this.player1.score >= 10) {
+			this.pause = true;
+			this.victory1.render(svg, 'Player 1 wins!')
+			this.victory2.render(svg, 'Press enter to play again!')
 		}
-		victoryB(svg){
-			if (this.player2.score >= 10) {
-				this.pause = true;
-				this.victory1.render(svg, 'Player 2 wins!')
-				this.victory2.render(svg, 'Press enter to play again!')
-			}
+	}
+	victoryB(svg){
+		if (this.player2.score >= 10) {
+			this.pause = true;
+			this.victory1.render(svg, 'Player 2 wins!')
+			this.victory2.render(svg, 'Press enter to play again!')
 		}
+	}
 
 	render() {
 		if (this.pause) {
@@ -88,6 +90,5 @@ export default class Game {
 
 		this.victoryA(svg);
 		this.victoryB(svg);
-
 	}
 }
