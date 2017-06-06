@@ -3,7 +3,7 @@ import Board from './Board';
 import Paddle from './Paddle';
 import Ball from './Ball';
 import Score from './Score';
-import Victory from './Victory';
+import Text from './Text';
 
 
 export default class Game {
@@ -36,8 +36,8 @@ export default class Game {
 		this.ball = new Ball(this.radius, this.width, this.height);
 		this.score1 = new Score(this.width / 2 - 35, 20, this.size);
 		this.score2 = new Score(this.width / 2 + 25, 20, this.size);
-		this.victory1 = new Victory(40, 110, 48);
-		this.victory2 = new Victory(120, 150, this.size);
+		this.victory1 = new Text(40, 110, 48);
+		this.victory2 = new Text(120, 150, this.size);
 
 		document.addEventListener('keydown', event => {
 			if (event.key === KEYS.spaceBar) {
@@ -50,7 +50,21 @@ export default class Game {
 				location.reload()
 			}
 		})
-	}
+	}		
+		victoryA(svg){
+			if (this.player1.score >= 10) {
+				this.pause = true;
+				this.victory1.render(svg, 'Player 1 wins!')
+				this.victory2.render(svg, 'Press enter to play again!')
+			}
+		}
+		victoryB(svg){
+			if (this.player2.score >= 10) {
+				this.pause = true;
+				this.victory1.render(svg, 'Player 2 wins!')
+				this.victory2.render(svg, 'Press enter to play again!')
+			}
+		}
 
 	render() {
 		if (this.pause) {
@@ -72,16 +86,8 @@ export default class Game {
 		this.score1.render(svg, this.player1.score);
 		this.score2.render(svg, this.player2.score);
 
-		if (this.player1.score >= 10) {
-			this.pause = true;
-			this.victory1.render(svg, 'Player 1 wins!')
-			this.victory2.render(svg, 'Press enter to play again!')
-		}
+		this.victoryA(svg);
+		this.victoryB(svg);
 
-		if (this.player2.score >= 10) {
-			this.pause = true;
-			this.victory1.render(svg, 'Player 2 wins!')
-			this.victory2.render(svg, 'Press enter to play again!')
-		}
 	}
 }

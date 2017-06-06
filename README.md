@@ -13,9 +13,6 @@ This project is a basic pong game using SVGs.  It was designed as an introductio
 * ▼: down
 
 ## Technologies Used
-- Ajax
-- JSON
-- [New York Times API](https://developer.nytimes.com/)
 - SVG
 - ES.next
 - [Babel](https://babeljs.io/)
